@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: norrisfrank-portfolio
+    env: static
+    buildCommand: ""
+    staticPublishPath: .
