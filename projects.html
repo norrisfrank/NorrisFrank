@@ -83,7 +83,7 @@ section { padding: 80px 24px; max-width: 1600px; margin: 0 auto; }
 .showcase-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
 .showcase-img:hover img { transform: scale(1.03); }
 .showcase-info h3 { font-size: clamp(32px, 5vw, 48px); font-weight: 500; margin-bottom: 12px; letter-spacing: -0.02em; display:flex; align-items:center; gap: 12px; }
-.badge { font-family: var(--mono); font-size: 11px; padding: 4px 8px; border: 1px solid var(--accent); color: var(--accent); border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
+.badge { font-family: var(--mono); font-size: 11px; padding: 4px 8px; border: 1px solid var(--accent); color: var(--accent); border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; background: var(--ink-faint); }
 .showcase-info .meta { font-family: var(--mono); font-size: 13px; color: var(--ink-dim); margin-bottom: 24px; }
 .showcase-info .desc { font-size: 18px; line-height: 1.6; color: var(--ink); margin-bottom: 32px; font-weight: 300; }
 .cta-link { display: inline-block; font-family: var(--mono); font-size: 13px; color: var(--ink); text-decoration: none; border: 1px solid var(--ink-faint); padding: 12px 24px; border-radius: 4px; transition: background 0.3s, color 0.3s; }
@@ -205,6 +205,37 @@ section { padding: 80px 24px; max-width: 1600px; margin: 0 auto; }
       <div class="showcase-img"><img src="Screenshots/Old Portfolio1.png" alt="Old Portfolio" loading="lazy"/></div>
     </div>
 
+  </div>
+</section>
+
+<!-- UNDERWORKS -->
+<section style="background:var(--ink-faint); padding: 80px 24px; border-bottom: 1px solid var(--ink-faint);">
+  <div style="max-width: 1600px; margin: 0 auto;">
+    <h2 class="section-title">Underworks</h2>
+    
+    <div class="showcase-list">
+      
+      <div class="showcase-item layout-img-left">
+        <div class="showcase-img"><img src="Screenshots/momo combos/homepage.png" alt="Momo Combos" loading="lazy"/></div>
+        <div class="showcase-info">
+          <h3>Momo Combos <span class="badge">Underworks</span></h3>
+          <p class="meta">Curated Bundling & E-commerce Platform &bull; Node.js, Express, PostgreSQL</p>
+          <p class="desc">A twin-engine commerce platform developed alongside Momo Exclusive on a shared modular backend skeleton. Engineered with native dual payment gateways for M-Pesa STK Push and card processing, dynamic multi-item bundle configuration, and real-time inventory locking.</p>
+          <a href="project-momocombos.html" class="cta-link">View Project &rarr;</a>
+        </div>
+      </div>
+
+      <div class="showcase-item layout-img-right">
+        <div class="showcase-info">
+          <h3>Momo Exclusive <span class="badge">Underworks</span></h3>
+          <p class="meta">Bespoke Apparel & Luxury Drops Platform &bull; Node.js, Express, PostgreSQL</p>
+          <p class="desc">Sharing the collective's core backend architecture, Momo Exclusive is optimized for exclusive apparel drops and bespoke collections. Features atomic inventory reservation timers during active payment sessions and integrated card and M-Pesa checkout flows.</p>
+          <a href="project-momoexclusive.html" class="cta-link">View Project &rarr;</a>
+        </div>
+        <div class="showcase-img"><img src="Screenshots/momo exclusive/homepage.png" alt="Momo Exclusive" loading="lazy"/></div>
+      </div>
+
+    </div>
   </div>
 </section>
 

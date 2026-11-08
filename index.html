@@ -218,8 +218,10 @@ section {
   aspect-ratio: 16/9; background: var(--ink-faint); display: flex; justify-content: center; align-items: center;
 }
 .showcase-img.art-showcase { aspect-ratio: 4/5; max-width: 400px; margin: 0 auto; }
-.showcase-img img { width: 100%; height: 100%; object-fit: cover; }
-.showcase-info h3 { font-size: clamp(32px, 5vw, 48px); font-weight: 500; margin-bottom: 12px; letter-spacing: -0.02em; }
+.showcase-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.showcase-img:hover img { transform: scale(1.03); }
+.showcase-info h3 { font-size: clamp(32px, 5vw, 48px); font-weight: 500; margin-bottom: 12px; letter-spacing: -0.02em; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.badge { font-family: var(--mono); font-size: 11px; padding: 4px 8px; border: 1px solid var(--accent); color: var(--accent); border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; background: var(--ink-faint); vertical-align: middle; }
 .showcase-info .meta { font-family: var(--mono); font-size: 13px; color: var(--ink-dim); margin-bottom: 24px; }
 .showcase-info .desc { font-size: 18px; line-height: 1.6; color: var(--ink); margin-bottom: 32px; font-weight: 300; }
 .cta-link { display: inline-block; font-family: var(--mono); font-size: 13px; color: var(--ink); text-decoration: none; border: 1px solid var(--ink-faint); padding: 12px 24px; border-radius: 4px; transition: background 0.3s, color 0.3s; }
@@ -441,16 +443,16 @@ section {
       </div>
     </div>
     
-    <!-- QR Studio: Desc Left, Image Right -->
+    <!-- Momo Combos: Desc Left, Image Right -->
     <div class="showcase-item layout-img-right">
       <div class="showcase-info">
-        <h3>QR Studio</h3>
-        <p class="meta">Dynamic QR Generation Platform</p>
-        <p class="desc">Designed the QR generation workflow and configuration interface, enabling users to create and configure custom QR codes with PNG/SVG export capabilities.</p>
-        <a href="project-qrstudio.html" class="cta-link">Explore Project &rarr;</a>
+        <h3>Momo Combos <span class="badge">Underworks</span></h3>
+        <p class="meta">Curated Bundling & E-commerce Platform &bull; Node.js, Express, PostgreSQL</p>
+        <p class="desc">A twin-engine commerce platform developed alongside Momo Exclusive on a shared modular backend skeleton. Engineered with native dual payment gateways for M-Pesa STK Push and card processing, dynamic multi-item bundle configuration, and real-time inventory locking currently under active development.</p>
+        <a href="project-momocombos.html" class="cta-link">Explore Project &rarr;</a>
       </div>
       <div class="showcase-img">
-        <img src="Screenshots/QR1.png" alt="QR Studio"/>
+        <img src="Screenshots/momo combos/homepage.png" alt="Momo Combos"/>
       </div>
     </div>
   </div>

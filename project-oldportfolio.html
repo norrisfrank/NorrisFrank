@@ -58,7 +58,9 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); ov
 .project-details h1 { font-size: clamp(40px, 6vw, 72px); letter-spacing: -0.02em; margin-bottom: 24px; line-height: 1.1; }
 .project-meta { font-family: var(--mono); font-size: 13px; color: var(--ink-dim); margin-bottom: 32px; display: flex; flex-direction: column; gap: 8px; }
 .project-desc { font-size: 17px; line-height: 1.8; font-weight: 300; margin-bottom: 40px; color: var(--ink); }
-.project-links { display: flex; gap: 16px; }
+.project-desc p { margin-bottom: 20px; }
+.project-desc p:last-child { margin-bottom: 0; }
+.project-links { display: flex; gap: 16px; flex-wrap: wrap; }
 .project-links a { display: inline-block; padding: 12px 24px; border: 1px solid var(--ink-faint); border-radius: 4px; color: var(--ink); text-decoration: none; font-family: var(--mono); font-size: 13px; transition: background 0.3s, border-color 0.3s; }
 .project-links a:hover { background: var(--ink); color: var(--bg); border-color: var(--ink); }
 

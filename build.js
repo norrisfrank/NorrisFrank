@@ -60,7 +60,9 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); ov
 .project-details h1 { font-size: clamp(40px, 6vw, 72px); letter-spacing: -0.02em; margin-bottom: 24px; line-height: 1.1; }
 .project-meta { font-family: var(--mono); font-size: 13px; color: var(--ink-dim); margin-bottom: 32px; display: flex; flex-direction: column; gap: 8px; }
 .project-desc { font-size: 17px; line-height: 1.8; font-weight: 300; margin-bottom: 40px; color: var(--ink); }
-.project-links { display: flex; gap: 16px; }
+.project-desc p { margin-bottom: 20px; }
+.project-desc p:last-child { margin-bottom: 0; }
+.project-links { display: flex; gap: 16px; flex-wrap: wrap; }
 .project-links a { display: inline-block; padding: 12px 24px; border: 1px solid var(--ink-faint); border-radius: 4px; color: var(--ink); text-decoration: none; font-family: var(--mono); font-size: 13px; transition: background 0.3s, border-color 0.3s; }
 .project-links a:hover { background: var(--ink); color: var(--bg); border-color: var(--ink); }
 
@@ -187,13 +189,37 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); ov
 
 const projects = [
   {
+    id: "momocombos",
+    title: "Momo Combos",
+    meta1: "Curated Bundling & E-commerce Platform [Underworks]",
+    meta2: "Stack: Node.js, Express.js, PostgreSQL, M-Pesa STK Push, Card Payments",
+    desc: "<p>Momo Combos is part of a dual-platform commerce collective engineered alongside Momo Exclusive, architected on a shared, modular backend skeleton tailored for dynamic product bundling and high-velocity retail. The platform solves the architectural challenge of managing multi-tiered composite inventory, where customer-selected bundles trigger real-time price calculations, automated discount thresholds, and synchronized stock deductions across shared warehouse SKUs.</p><p>Currently in active development, the backend features a robust fintech pipeline with integrated multi-channel checkout: Safaricom Daraja M-Pesa STK Push and secure international card payments. I engineered the transaction lifecycle to be fully resilient, implementing cryptographic webhook signature verification, asynchronous transaction polling as a network fallback, and strict idempotency keys to eliminate double-billing risks. The PostgreSQL relational schema is structured with row-level locks and transactional boundaries, preventing race conditions when multiple concurrent shoppers attempt to check out the last remaining bundle components. The client interface pairs an interactive custom bundle configurator with reactive cart state management, delivering seamless performance from item assembly to payment settlement.</p>",
+    live: "https://momocombos.onrender.com",
+    github: "https://github.com/norrisfrank/Momo-Combos",
+    img1: "Screenshots/momo combos/homepage.png",
+    img2: "Screenshots/momo combos/custom.png",
+    img3: "Screenshots/momo combos/cart.png"
+  },
+  {
+    id: "momoexclusive",
+    title: "Momo Exclusive",
+    meta1: "Bespoke Apparel & Luxury Drops Platform [Underworks]",
+    meta2: "Stack: Node.js, Express.js, PostgreSQL, M-Pesa STK Push, Card Payments",
+    desc: "<p>Momo Exclusive is the bespoke retail counterpart in the commerce collective, sharing an identical architectural foundation with Momo Combos while optimizing for limited-edition apparel releases, accessories, and curated drop mechanics. Because flash sales for exclusive inventory generate instantaneous traffic spikes, the backend was designed with high-throughput Express middleware, cached product indexing, and strict input validation layers to isolate the database from redundant queries.</p><p>Sharing the collective's core payment skeleton, Momo Exclusive integrates both Safaricom M-Pesa STK Push and card transaction processing. The checkout pipeline features atomic stock reservation timers that temporarily secure selected inventory during active payment authorization windows, automatically releasing items back to the public pool if a payment session times out. The underlying PostgreSQL database manages granular product variants, accessories taxonomies, and authenticated customer order histories with full relational integrity. Currently under active development, the platform showcases how a unified, modular backend can power distinct frontend brand experiences without duplicating core infrastructure code.</p>",
+    live: "https://momoexclusive.onrender.com",
+    github: "https://github.com/norrisfrank/Momo-Exclusive",
+    img1: "Screenshots/momo exclusive/homepage.png",
+    img2: "Screenshots/momo exclusive/accessories.png",
+    img3: "Screenshots/momo exclusive/cart.png"
+  },
+  {
     id: "norryghosty",
     title: "NORRY GHOSTY // OSINT",
     meta1: "Security & OSINT Tooling",
     meta2: "Stack: Python, Node.js, OSINT APIs",
     desc: "<p>A specialized open-source intelligence platform engineered to aggregate, parse, and visualize public records and domain registries securely. Built for deep investigations, the system relies on extensive data querying covering WHOIS lookups, historical DNS records, and subdomain enumeration. The architecture securely pipes intelligence data through a Node.js intermediary layer, ensuring the payload remains untampered before hitting the client. I implemented mechanisms to handle and circumvent strict rate limits dynamically, optimizing the intelligence gathering flow. Visually, the data is mapped and filtered to provide investigators with an intuitive, interconnected view of digital footprints without exposing the backend to injection vulnerabilities.</p>",
     live: "https://norry-ghosty-2-0.onrender.com/",
-    github: true,
+    github: "https://github.com/norrisfrank",
     img1: "Screenshots/norryghosty1.png",
     img2: "Screenshots/norryghosty2.png",
     img3: "Screenshots/norryghosty3.png"
@@ -205,7 +231,7 @@ const projects = [
     meta2: "Stack: Node.js/Express, PostgreSQL, HTML/CSS",
     desc: "<p>A fully integrated storefront architecture built from scratch for browsing and purchasing custom press-on nail collections. The most complex aspect of this build was engineering the state management for customized sizing profiles and shopping carts natively. The PostgreSQL database schema was deeply normalized to handle infinite variations in nail sizes, collections, and custom bespoke orders without creating data redundancy. I developed a robust REST API in Express.js that securely handles customer session data and profiles, preparing the architecture for seamless third-party payment gateway integration like M-Pesa or Stripe. The user interface was rigorously tested and crafted with a mobile-first CSS architecture prioritizing conversions and fluid user experiences.</p>",
     live: "https://pressdpretty.onrender.com",
-    github: true,
+    github: "https://github.com/norrisfrank",
     img1: "Screenshots/Pressdpretty1.png",
     img2: "Screenshots/Pressdpretty2.png",
     img3: "Screenshots/Pressdpretty3.png"
@@ -217,7 +243,7 @@ const projects = [
     meta2: "Stack: JavaScript, TensorFlow.js, Deep Q-Learning",
     desc: "<p>An ambitious project intersecting game development and artificial intelligence, built entirely in JavaScript. I engineered the game loop and mechanics, integrating TensorFlow.js directly into the browser to run deep Q-learning inference locally. This allowed the AI to maintain 60 FPS gameplay without costly server roundtrips. I spent weeks tuning the state vectors and reward functions—assigning positive weights for eating food and heavy penalties for wall collisions. Beyond just gameplay, I developed a sophisticated real-time telemetry dashboard alongside the canvas. This dashboard graphs epsilon decay, loss metrics, and real-time neural activations, providing an transparent look into the machine learning training process.</p>",
     live: "https://sneko-rdgh.onrender.com/",
-    github: true,
+    github: "https://github.com/norrisfrank",
     img1: "Screenshots/sneko1.png",
     img2: "Screenshots/sneko2.png",
     img3: "Screenshots/sneko3.png"
@@ -229,7 +255,7 @@ const projects = [
     meta2: "Stack: Node.js, Express.js, PostgreSQL",
     desc: "<p>A high-performance utility platform for dynamic SVG and PNG rendering based on complex user payloads. The backend engine securely encodes various data types—including raw URLs, WiFi configurations, and VCards—into error-corrected matrices (supporting L, M, Q, and H tolerance levels). To ensure instantaneous delivery during high traffic, I implemented an aggressive caching mechanism within the Node.js server that serves frequently generated codes directly from memory without triggering re-renders. The PostgreSQL database acts as the source of truth, meticulously tracking scan counts, creation histories, and user configurations, tied together via a clean Express router.</p>",
     live: "https://qr-studio-eqqa.onrender.com/",
-    github: true,
+    github: "https://github.com/norrisfrank",
     img1: "Screenshots/QR1.png",
     img2: "Screenshots/QR2.png",
     img3: "Screenshots/QR3.png"
@@ -241,7 +267,7 @@ const projects = [
     meta2: "Stack: Node.js, Express.js, React, Tailwind CSS",
     desc: "<p>My previous technical showcase that marked a significant transition in my tech stack, moving from static HTML setups to a fully reactive component architecture using React. The frontend utilizes a Tailwind CSS utility-first approach that allowed for rapid prototyping and highly consistent design systems. Behind the scenes, the Express backend functions as a headless CMS, independently delivering case study JSON data and dynamically rendering project pages. This project was also my testing ground for CI/CD integrations, featuring a fully automated deployment pipeline using GitHub Actions that triggers builds and live deployments to Render instantaneously upon merging into the main branch.</p>",
     live: "https://portfolio-backend-92a8.onrender.com/",
-    github: true,
+    github: "https://github.com/norrisfrank",
     img1: "Screenshots/Old Portfolio1.png",
     img2: "Screenshots/old portfolio2.png",
     img3: "Screenshots/old portfolio3.png"
@@ -253,7 +279,7 @@ const projects = [
     meta2: "Stack: Node.js, Express, PostgreSQL",
     desc: "<p>An enterprise-grade logistics platform engineered to solve the complex algorithms of shipment tracking and cargo distribution. The core database schema handles multi-layered relationships between waypoints, shipments, dispatchers, and drivers. Security was paramount, leading me to implement a rigorous JWT authentication flow with strict Role-Based Access Control (RBAC)—ensuring that drivers can only update the statuses of their specifically assigned cargo. I focused heavily on real-time state synchronization and comprehensive input validation to prevent injection attacks on tracking endpoints, ensuring that cargo data remains immutable and transparent for corporate clients.</p>",
     live: "https://titan-backend-igvr.onrender.com/",
-    github: true,
+    github: "https://github.com/norrisfrank",
     img1: "Screenshots/titan1.png",
     img2: "Screenshots/titan2.png",
     img3: "Screenshots/titan3.png"
@@ -300,7 +326,8 @@ projects.forEach(p => {
     .replace(/\{\{IMG1\}\}/g, p.img1);
     
   if (p.github) {
-    html = html.replace('{{GITHUB_BTN}}', '<a href="https://github.com/norrisfrank" target="_blank">GitHub</a>');
+    const ghUrl = typeof p.github === 'string' ? p.github : 'https://github.com/norrisfrank';
+    html = html.replace('{{GITHUB_BTN}}', `<a href="${ghUrl}" target="_blank">GitHub</a>`);
   } else {
     html = html.replace('{{GITHUB_BTN}}', '');
   }
