@@ -16,6 +16,11 @@ My engineering philosophy prioritizes resilience, clean modular architecture, an
 
 ## Selected Engineering Work
 
+### Sirenia [Flagship]
+A real-time, fully procedural 3D underwater simulation built with raw WebGPU—operating without external game engines, 3D model files, pre-rendered textures, or recorded audio assets—contained entirely within a ~96 KB payload. Features procedural kelp forests (~2M blades), volumetric sunbeams, dynamic water caustics, signed distance field (SDF) sculpted set pieces (sunken wooden galley, monolithic whale fluke), and live procedural underwater acoustics synthesized in real time via the Web Audio API.
+*   **Live Demo:** [sirenia.onrender.com](https://sirenia.onrender.com)
+*   **GitHub:** [github.com/norrisfrank/Sirenia](https://github.com/norrisfrank/Sirenia)
+
 ### NORRY GHOSTY // OSINT Intelligence
 A specialized open-source intelligence platform engineered to aggregate, parse, and visualize public records and domain registries securely. The system manages extensive data querying for WHOIS lookups and historical DNS records, routing intelligence data through a secure Node.js intermediary layer to prevent payload tampering and manage rate limits dynamically.
 

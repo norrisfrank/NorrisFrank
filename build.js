@@ -189,6 +189,18 @@ html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); ov
 
 const projects = [
   {
+    id: "sirenia",
+    title: "Sirenia",
+    meta1: "Real-Time Procedural 3D WebGPU Simulation [Flagship]",
+    meta2: "Stack: WebGPU, WGSL, Procedural Shaders, Web Audio API, JavaScript",
+    desc: "<p>Sirenia is a real-time, fully procedural 3D underwater simulation engineered directly on top of the raw WebGPU graphics API—operating with zero third-party game engines, zero external asset libraries, zero pre-rendered textures, and zero recorded audio files. The entire interactive world is packed into a self-contained ~96 KB payload and synthesized purely through mathematical algorithms and compute shaders at runtime.</p><p>The project features an advanced multi-pass graphics pipeline written entirely in WebGPU Shading Language (WGSL). The rendering architecture incorporates dithered ray-marched volumetric sunbeams computed at half-resolution with bilateral depth-aware blurring, dynamic water caustics projected onto procedural seabed terrains, cascaded shadow mapping with percentage-closer filtering (PCF), and a 6-stage HDR bloom post-processing chain. The world simulates over two million instanced, swaying kelp blades with multi-pass LOD and 16×16 cell-based frustum culling, vertex-animated marine fauna (manta rays and schooling fish), signed distance field (SDF) sculpted monolithic structures, and an algorithmic sunken 17th-century wooden galley. To guarantee a sustained 60 FPS across varying GPU tiers, the engine utilizes zero per-frame garbage collector allocations, dynamic resolution scaling calibrated by GPU timestamp queries, and an automated hardware degradation recovery loop. The visual environment is paired with a fully generative procedural soundscape synthesized on the fly via the Web Audio API, reacting in real time to camera velocity and depth.</p>",
+    live: "https://sirenia.onrender.com",
+    github: "https://github.com/norrisfrank/Sirenia",
+    img1: "Screenshots/Sirenia/kelp-forest.jpg",
+    img2: "Screenshots/Sirenia/light-rays.jpg",
+    img3: "Screenshots/Sirenia/purple-grotto.jpg"
+  },
+  {
     id: "momocombos",
     title: "Momo Combos",
     meta1: "Curated Bundling & E-commerce Platform [Underworks]",
